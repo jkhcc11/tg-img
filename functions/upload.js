@@ -6,7 +6,13 @@ export async function onRequestPost(context) {
     const ratingApi = env.RATINGAPI ? `${env.RATINGAPI}?` : ModerateContentUrl;
     const clientIP = request.headers.get("x-forwarded-for") || request.headers.get("clientIP");
     const Referer = request.headers.get('Referer') || "Referer";
-    const res_img = await fetch('https://telegra.ph/' + url.pathname + url.search, {
+    // const res_img = await fetch('https://telegra.ph/' + url.pathname + url.search, {
+    //     method: request.method,
+    //     headers: request.headers,
+    //     body: request.body,
+    // });
+    
+      const res_img = await fetch('https://telegra.ph/upload?source=bugtracker', {
         method: request.method,
         headers: request.headers,
         body: request.body,
